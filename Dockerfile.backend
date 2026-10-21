@@ -1,0 +1,30 @@
+FROM php:8.2-apache
+
+# Install required system dependencies and PHP extensions
+RUN apt-get update && apt-get install -y \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    zip \
+    unzip \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) mysqli pdo pdo_mysql gd
+
+# Enable Apache mod_rewrite
+RUN a2enmod rewrite
+
+# Set working directory
+WORKDIR /var/www/html
+
+# Adjust upload limits for images/designs
+RUN echo "file_uploads = On\n" \
+         "memory_limit = 256M\n" \
+         "upload_max_filesize = 64M\n" \
+         "post_max_size = 64M\n" \
+         "max_execution_time = 300\n" \
+         > /usr/local/etc/php/conf.d/uploads.ini
+
+# Expose port 80
+EXPOSE 80
+
+CMD ["apache2-foreground"]

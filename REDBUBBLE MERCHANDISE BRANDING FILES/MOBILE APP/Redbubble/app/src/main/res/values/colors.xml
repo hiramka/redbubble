@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Modern Brand Palette -->
+    <color name="colorPrimary">#E50914</color>
+    <color name="colorPrimaryDark">#B71C1C</color>
+    <color name="colorPrimaryLight">#FF5252</color>
+    <color name="colorAccent">#7C4DFF</color>
+    <color name="colorAccentLight">#B388FF</color>
+    
+    <!-- UI Surface Tokens -->
+    <color name="bg_dark">#0F0F17</color>
+    <color name="bg_light">#F8F9FA</color>
+    <color name="card_bg_light">#FFFFFF</color>
+    <color name="card_bg_dark">#1E1E2D</color>
+    <color name="card_border">#E5E7EB</color>
+    
+    <!-- Typography Colors -->
+    <color name="text_primary">#111827</color>
+    <color name="text_secondary">#6B7280</color>
+    <color name="text_muted">#9CA3AF</color>
+    <color name="text_light">#FFFFFF</color>
+    
+    <!-- Status Badges -->
+    <color name="statusSuccess">#10B981</color>
+    <color name="statusWarning">#F59E0B</color>
+    <color name="statusError">#EF4444</color>
+    <color name="statusInfo">#3B82F6</color>
+
+    <!-- Legacy Compatibility -->
+    <color name="color_white">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="btn_color">#E50914</color>
+    <color name="colorBlack">#111827</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorreceipt">#9CA3AF</color>
+    <color name="transparent">#00000000</color>
+    <color name="purple">#7C4DFF</color>
+    <color name="red">#E50914</color>
+    <color name="colorLightAccent">#FFD54F</color>
+    <color name="lightGray">#F3F4F6</color>
+    <color name="statusColor">#10B981</color>
+    <color name="orange">#FF5722</color>
+    <color name="gray">#9CA3AF</color>
+    <color name="purple_500">#7C4DFF</color>
+
+    <color name="tshirt_color">#FFFBEB</color>
+    <color name="hoodie_color">#EEF2FF</color>
+    <color name="cap_color">#ECFDF5</color>
+    <color name="default_card">#FFFFFF</color>
+</resources>

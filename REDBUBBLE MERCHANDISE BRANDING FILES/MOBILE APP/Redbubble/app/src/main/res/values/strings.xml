@@ -1,0 +1,93 @@
+<resources>
+    <string name="app_name">Redbubble</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Redbubble</string>
+    <string name="nav_header_subtitle">Redbubble</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="home_second">Home Second</string>
+    <string name="logout">Logout</string>
+    <string name="register">Register</string>
+    <string name="login">Customer Login</string>
+    <string name="orders">Orders</string>
+    <string name="feedback">Feedback</string>
+    <string name="staff_login">Login</string>
+    <string name="about">
+Welcome to the Redbubble Merchandise Branding App — your all-in-one platform for creating, customizing,
+        and ordering branded merchandise with ease. Our goal is to simplify how individuals, groups, and
+        organizations bring their ideas to life through quality, eco-friendly products. Whether you’re
+        planning a wedding, organizing a community event, or representing an NGO, we empower you to design
+        unique items like t-shirts, hoodies, and caps directly from your mobile device. We partner with
+        verified suppliers who use sustainable materials and localized fulfillment to reduce carbon
+        emissions and ensure fast delivery. With our app, you can manage bulk or on-demand orders, track
+        your deliveries, and collaborate with your team — all in one intuitive space. We’re here to make
+        branding smarter, greener, and accessible to everyone.
+
+
+    </string>
+
+
+    <string name="help">
+        <b>1.	Help</b>
+
+    </string>
+
+    <string-array name="service_categories">
+        <item>All</item>
+        <item>T-shirts</item>
+        <item>Hoodies</item>
+        <item>Caps</item>
+    </string-array>
+
+
+    <string-array name="recipient">
+        <item>Select Recipient</item>
+        <item>Finance</item>
+        <item>Service manager</item>
+        <item>Technician</item>
+        <item>Designer</item>
+    </string-array>
+
+
+    <string-array name="products">
+        <item>Select item</item>
+
+        <item>Scaffolding</item>
+        <item>Power Drill</item>
+        <item>Angle Grinder</item>
+        <item>Silicon</item>
+        <item>Measuring Tape</item>
+        <item>Rivet Gun</item>
+
+    </string-array>
+    <string-array name="service_desc">
+        <item>Select item</item>
+
+        <item>3D Acrylic</item>
+        <item>LED Lightbox</item>
+        <item> Frosted Glass</item>
+
+    </string-array>
+    <string-array name="installation_type">
+        <item>Select item</item>
+
+        <item>Wall-mounted</item>
+        <item>Hanging</item>
+        <item>Freestanding</item>
+
+    </string-array>
+    <string name="title_activity_supplier_payments">SupplierPayments</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+</resources>

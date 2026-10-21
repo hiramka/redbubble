@@ -1,0 +1,37 @@
+# Android & Gradle
+.gradle/
+**/.gradle/
+build/
+**/build/
+local.properties
+**/local.properties
+*.iml
+**/*.iml
+**/.idea/
+.idea/
+captures/
+**/captures/
+.externalNativeBuild/
+**/.externalNativeBuild/
+.cxx/
+**/.cxx/
+
+# Packages & Binaries
+*.apk
+*.aab
+*.dex
+*.class
+*.jar
+!gradle-wrapper.jar
+
+# Keystore
+*.jks
+*.keystore
+
+# Logs & temp
+*.log
+.DS_Store
+Thumbs.db
+.qodo/
+**/.qodo/
+node_modules/

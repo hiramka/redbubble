@@ -1,0 +1,86 @@
+services:
+  # 1. MySQL / MariaDB Database Container
+  db:
+    image: mariadb:10.11
+    container_name: redbubble_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: redbubble
+      MYSQL_USER: redbubble_user
+      MYSQL_PASSWORD: redbubble_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      # Automatically import the database schema on first startup
+      - "./REDBUBBLE MERCHANDISE BRANDING FILES/DATABASE/redbubble.sql:/docker-entrypoint-initdb.d/01_redbubble.sql:ro"
+    networks:
+      - redbubble_net
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot_password"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # 2. phpMyAdmin Database Manager (Web GUI)
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: redbubble_phpmyadmin
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: root_password
+      MYSQL_ROOT_PASSWORD: root_password
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - redbubble_net
+
+  # 3. PHP Apache API & Web Backend Server
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: redbubble_backend
+    restart: always
+    ports:
+      - "8082:80"
+    volumes:
+      # Mount backend web root directory
+      - "./backend_files:/var/www/html/redbubble"
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: redbubble
+      DB_USER: redbubble_user
+      DB_PASS: redbubble_password
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - redbubble_net
+
+  # 4. Android Build Container (Optional CLI build container for APK)
+  android-builder:
+    image: gradle:8.2.0-jdk17
+    container_name: redbubble_android_builder
+    profiles:
+      - build
+    volumes:
+      - "./REDBUBBLE MERCHANDISE BRANDING FILES/MOBILE APP/Redbubble:/home/gradle/project"
+    working_dir: /home/gradle/project
+    command: ./gradlew assembleDebug
+
+networks:
+  redbubble_net:
+    driver: bridge
+
+volumes:
+  db_data:
+    driver: local
